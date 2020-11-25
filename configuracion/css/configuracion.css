@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.contendor {
+    max-height: 400px;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-top: 2%;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    color: #032b43;
+}
+
+.foto {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    border: 2px solid #032b43;
+}
+
+.input100 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input10 {
+    width: 100%;
+    border: 1px solid red;
+    color: #032b43;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input[type="file"] {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #032b43;
+    border: 1px solid red;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+@media(max-width:820px) {
+    .contendor {
+        width: 80%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
