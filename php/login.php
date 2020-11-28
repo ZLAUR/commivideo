@@ -16,7 +16,7 @@ if (isset($_POST['ingresar'])){
     $validar = mysqli_num_rows($consulta);
     
    
-    if ($validar === 1){
+    if ($validar == 1){
          $detalles=mysqli_fetch_array($consulta);
          
          $_SESSION['id']=$detalles['id'];
@@ -32,7 +32,12 @@ if (isset($_POST['ingresar'])){
         }elseif ( $_SESSION['tipe_user'] == '0') {
             header("location:../admin/home.php");
         }
-    } else {
+    }elseif($validar < 0){
+        $_SESSION['user_incorrect']='El usuario no existe';
+        $_SESSION['type_error_user_incorrect']='danger';
+        header("location:../index.php");
+    }
+     else {
         $_SESSION['user_incorrect']='El correo y la contraseña son incorrectos';
         $_SESSION['type_error_user_incorrect']='danger';
         header("location:../index.php");

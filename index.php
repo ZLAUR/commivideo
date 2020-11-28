@@ -25,7 +25,7 @@
             <?php if(isset($_SESSION['user_incorrect'])){?>
             <div class="alert alert-<?= $_SESSION['type_error_user_incorrect']?> alert-dismissible fade show"
                 role="alert">
-                <strong>UPS :(!</strong> <?= $_SESSION['user_incorrect']?>
+                 <?= $_SESSION['user_incorrect']?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

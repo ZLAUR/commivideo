@@ -41,6 +41,41 @@
     color: #f5af19;
 }
 
+/* tabla de usuarios */
+table{
+    width: 90%;
+    margin: auto;
+}
+table td{
+    border: 1px solid #1E254B;
+    padding: 10px;
+}
+
+table tr:hover{
+    background-color: #4B2F65;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tabla_cabe{
+    background-color:#1E254B;
+    color: #fff;
+}
+.action{
+    text-align: center;
+}
+.fototabla{
+    padding: 0;
+}
+.foto_perfil {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+/* fin tabla de usuarios */
+
+
+
 @media(max-width:720px) {
     .info1 {
         font-size: 30px;

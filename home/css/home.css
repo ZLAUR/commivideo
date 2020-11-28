@@ -1,7 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 * {
     margin: 0;
     padding: 0;
+}
+
+body{
+    margin: 0;
+}
+
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
 }
 
 .contenedor {
@@ -17,8 +31,8 @@
 }
 
 .info1 {
-    font-size: 40px;
-    font-family: 'Lobster', cursive;
+    font-size: 100px;
+    font-family: 'Anton', sans-serif;
     color: red;
 }
 

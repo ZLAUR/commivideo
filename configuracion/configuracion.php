@@ -14,7 +14,7 @@ if(isset($_SESSION['id'])){
     $consulta= mysqli_query($conn, $sql);
     
     if (mysqli_num_rows($consulta) == 1) {
-    $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($consulta);
     $name = $row['name'];
     $lastname = $row['lastname'];
     $email = $row['email'];
@@ -29,15 +29,17 @@ if(isset($_SESSION['id'])){
       $lastname=$_POST['lastname'];
       $email=$_POST['email'];
       $password=$_POST['password'];
-      $foto=$_POST['foto'];
+      $nombre_file=$_FILES['video_file']['name'];
 
-
-      $query = "UPDATE login_user set name = '$name', lastname = '$lastname', email='$email', password='$password', foto='$foto' WHERE id=$id";
-      mysqli_query($conn, $query);
-      $_SESSION['actualizeuser'] = 'Sus datos estan siendo actualizados..';
-      $_SESSION['actualizeuser_type'] = 'success';
-      header("Location:../");
-
+      $query = "UPDATE login_user set name = '$name', lastname = '$lastname', email='$email', password='$password', foto='$nombre_file' WHERE id=$id";
+      $consulta= mysqli_query($conn, $query);
+      if (!$consulta) {
+          echo "ERROR";
+      }else{
+        $_SESSION['user_incorrect'] = 'Sus datos estan han sido actualizados..';
+        $_SESSION['type_error_user_incorrect'] = 'success';
+        header("Location:../index.php");
+      }
 
   }
 }
@@ -45,7 +47,7 @@ if(isset($_SESSION['id'])){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -69,14 +71,7 @@ if(isset($_SESSION['id'])){
         <input name="email" class="form-control input100" type="email" value="<?php echo $_SESSION['email'];?>">
         <input name="password" class="form-control input100" type="password"
             value="<?php echo $_SESSION['password'];?>">
-        <input name="foto" class="form-control input100" type="text" value="<?php echo $_SESSION['foto'];?>">
         <input type="file" class="file" name="video_file" id="">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong >Copia el nombre de la imgen y pegala en PERFIL.PNG </strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
         <input class="btn input10" name="actualizar" type="submit" value="Actualizar">
     </form>
 
@@ -85,7 +80,6 @@ if(isset($_SESSION['id'])){
 
 $nombre_file=$_FILES['video_file']['name'];
 $guardado=$_FILES['video_file']['tmp_name'];
-$nombre_foto = $nombre_file;
 
 
 if (!file_exists('foto')) {

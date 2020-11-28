@@ -28,13 +28,13 @@ if ($session == null || $session = '') {
 <!--Heder cabesera-->
     <?php include 'includes/header.php'?>
 
+    <video src="video/BC1.mp4" autoplay loop></video>
+
 <section class="contenedor">
     <h1 class="info1">Bienvenido: <span class="name_user"><?php echo $_SESSION['name']?> <?php echo $_SESSION['lastname']?> </span></h1>
     <h2 class="info2">Email: <?php echo $_SESSION['email']?></h2>
     <h3 class="info3" >Tipo de usurio: Normal</h3>
 </section>
-
-<a href="PROYECTO 2 - SEMANA 3 TERCERO BGU.pdf">aaa</a>
 
 <!--DNC JS-->
     <?php include '../includes/js.php' ?>
