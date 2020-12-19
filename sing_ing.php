@@ -20,6 +20,7 @@
         <input class="" type="text" name="name" placeholder="Nombre">
         <input class="" type="text" name="lastname" placeholder="Apellido">
         <input class="" type="email" name="email" placeholder="Correo Electrónico">
+        <input class="" type="number" name="telefono" placeholder="Teléfono">
         <input class="" type="password" name="password" placeholder="Contraseña">
         <input class="btn boton" type="submit" name="created" value="Crear cuenta">
     </form>

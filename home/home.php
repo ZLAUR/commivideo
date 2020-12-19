@@ -28,13 +28,27 @@ if ($session == null || $session = '') {
 <!--Heder cabesera-->
     <?php include 'includes/header.php'?>
 
-    <video src="video/BC1.mp4" autoplay loop></video>
 
-<section class="contenedor">
-    <h1 class="info1">Bienvenido: <span class="name_user"><?php echo $_SESSION['name']?> <?php echo $_SESSION['lastname']?> </span></h1>
-    <h2 class="info2">Email: <?php echo $_SESSION['email']?></h2>
-    <h3 class="info3" >Tipo de usurio: Normal</h3>
-</section>
+    <div class="contenedor">
+      <div class="menu_user">
+
+        <div class="cuadro">
+          <a href="../videos/video.php?videos=<?php echo $_SESSION['email']?>"> <img src="https://cdn.icon-icons.com/icons2/1713/PNG/512/iconfinder-videologoplayicon-3993847_112649.png" class="cuadro_image" alt="Image"> </a>
+        </div>
+        <div class="cuadro">
+          <a href="#"> <img src="https://cdn.icon-icons.com/icons2/1713/PNG/512/iconfinder-videologoplayicon-3993847_112649.png" class="cuadro_image" alt="Image"> </a>
+        </div>
+        <div class="cuadro">
+          <a href="#"> <img src="https://cdn.icon-icons.com/icons2/1713/PNG/512/iconfinder-videologoplayicon-3993847_112649.png" class="cuadro_image" alt="Image"> </a>
+        </div>
+      </div>
+      <div class="info_user">
+        <img src="../foto/<?php echo $_SESSION['foto'] ?>" class="foto_perfil_user" alt="image">
+        <h1 class="info1">Bienvenido: <span class="name_user"><?php echo $_SESSION['name']?> <?php echo $_SESSION['lastname']?> </span></h1>
+        <h2 class="info2">Email: <?php echo $_SESSION['email']?></h2>
+        <h3 class="info3" >Tipo de usurio: Normal</h3>
+      </div>
+    </div>
 
 <!--DNC JS-->
     <?php include '../includes/js.php' ?>

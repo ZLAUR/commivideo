@@ -18,6 +18,7 @@ if(isset($_SESSION['id'])){
     $name = $row['name'];
     $lastname = $row['lastname'];
     $email = $row['email'];
+    $telefono = $row['telefono'];
     $password = $row['password'];
     $foto = $row['foto'];
   }
@@ -28,10 +29,11 @@ if(isset($_SESSION['id'])){
       $name=$_POST['name'];
       $lastname=$_POST['lastname'];
       $email=$_POST['email'];
+      $telefono=$_POST['telefono'];
       $password=$_POST['password'];
       $nombre_file=$_FILES['video_file']['name'];
 
-      $query = "UPDATE login_user set name = '$name', lastname = '$lastname', email='$email', password='$password', foto='$nombre_file' WHERE id=$id";
+      $query = "UPDATE login_user set name = '$name', lastname = '$lastname', email='$email', telefono='$telefono' ,password='$password', foto='$nombre_file' WHERE id=$id";
       $consulta= mysqli_query($conn, $query);
       if (!$consulta) {
           echo "ERROR";
@@ -69,6 +71,7 @@ if(isset($_SESSION['id'])){
         <input name="name" class="form-control input100" type="text" value="<?php echo $_SESSION['name'];?>">
         <input name="lastname" class="form-control input100" type="text" value="<?php echo $_SESSION['lastname'];?>">
         <input name="email" class="form-control input100" type="email" value="<?php echo $_SESSION['email'];?>">
+        <input name="telefono" class="form-control input100" type="number" value="<?php echo $telefono?>">
         <input name="password" class="form-control input100" type="password"
             value="<?php echo $_SESSION['password'];?>">
         <input type="file" class="file" name="video_file" id="">

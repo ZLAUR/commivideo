@@ -1,63 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body{
-    margin: 0;
+  font-family: 'Anton', sans-serif;
+  background-image: url(https://i.ibb.co/FxmWj65/fondoz012.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+body::-webkit-scrollbar {
+    width: 0;     /* Tamaño del scroll en vertical */
+    height: 0;    /* Tamaño del scroll en horizontal */
+    display: none;  /* Ocultar scroll */
+}
+.contenedor{
+   width: 100%;
+   height: 100vh;
+ }
 
-video{
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: -1;
-}
+ .info_user{
+   width: 50%;
+   height: auto;
+   display: block;
+   float: right;
+   margin-top: 100px;
+ }
 
-.contenedor {
-    margin-top: 2%;
-    width: 100%;
-    height: 200px;
-}
+ .menu_user{
+   width: 50%;
+   height: 100%;
+   display: block;
+   float: left;
+ }
+ .cuadro{
+   float: inherit;
+   margin-bottom: 20px;
+   margin-left: 100px;
+   margin-top: 50px;
+   max-width: 100px;
+   max-height: 100px;
+   cursor: pointer;
+   transition: 0.5s;
+   background-color: red;
+   border-radius: 20px;
+ }
+ .cuadro:hover{
+   transform: scale(2);
 
-.info1,
-.info2,
-.info3 {
-    text-align: center;
-}
+ }
 
-.info1 {
-    font-size: 100px;
-    font-family: 'Anton', sans-serif;
-    color: red;
-}
+ .cuadro_image{
+   width: 100%;
+   height: 100%;
+   display: flex;
+ }
 
-.name_user {
-    color: black;
-}
+ .foto_perfil_user{
+   margin: auto;
+   display: flex;
+   width: 20%;
+   height: auto;
+   position: relative;
+   border-radius: 50%;
+   border: 3px solid #fff;
+ }
 
-.info2 {
-    font-size: 18px;
-    font-family: 'Anton', sans-serif;
-}
+ .info1, .info2, .info3{
+   margin-top: 20px;
+   text-align: center;
+   color: #fff;
+ }
+ .info1{
+   font-size: 30px;
+   color: red;
+ }
 
-.info3 {
-    font-size: 14px;
-    font-family: 'Anton', sans-serif;
-}
+ .name_user{
+    color: #fff;
+ }
+ .info2{
+   font-size: 20px;
 
-@media(max-width:720px) {
-    .info1 {
-        font-size: 30px;
-    }
-    .info2 {
-        font-size: 15px;
-    }
-    .info3 {
-        font-size: 10px;
-    }
-}
+ }
+ .info3{
+   font-size: 20px;
+ }

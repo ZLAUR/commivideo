@@ -49,6 +49,7 @@ if ($session == null || $session = '') {
             <td class="tabla_cabe action">Nombre</td>
             <td class="tabla_cabe action">Apellido</td>
             <td class="tabla_cabe action">Correo</td>
+            <td class="tabla_cabe action">Teléfono</td>
             <td class="tabla_cabe action">Contraseña</td>
             <td class="tabla_cabe action">Tipo de usuario</td>
             <td class="tabla_cabe action">Acción</td>
@@ -66,6 +67,7 @@ while ($row=mysqli_fetch_array($consult)) {?>
             <td><?php echo $row['name'] ?></td>
             <td><?php echo $row['lastname']?></td>
             <td><a href="mailto:<?php echo $row['email']?>"><?php echo $row['email']?></a></td>
+            <td><a href="https://api.whatsapp.com/send?phone=593<?php echo $row['telefono']?>&text=Sr.a%20<?php echo $row['lastname']?> <?php echo $row['name'] ?>%20..&&fbclid=IwAR3GVG7aG--f9sQtIVjSQBEKjxyHEIt9yROLR0s00nZVN7m1UXKp-Wut_1k" target=”_blank”><?php echo $row['telefono']?></a></td>
             <td><?php echo $row['password']?></td>
             <td><?php if($row['tipe_user'] == 0){
                      echo "admin";
@@ -81,11 +83,7 @@ while ($row=mysqli_fetch_array($consult)) {?>
 
         <?php }?>
     </table>
-
-
-
     <?php include '../includes/js.php' ?>
-
 </body>
 
 </html>
